@@ -59,9 +59,7 @@ public class DaoImplObjectDB implements Dao
 	}
 
 	
-	
-	
-	
+	//All the methods below are created but not implemented because is not needed
 	
 	
 	@Override
