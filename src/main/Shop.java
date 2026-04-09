@@ -12,6 +12,11 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import dao.Dao;
 import dao.DaoImplFile; //Implementación para la práctica 1
 import dao.DaoImplJDBC; //Implementación para la práctica 2
@@ -94,8 +99,10 @@ public class Shop
 
 	public static void main(String[] args)
 	{
+		//createUsers();
+		
 		Shop shop = new Shop();
-
+		
 		shop.loadInventory();
 
 		shop.initSession();
@@ -544,5 +551,34 @@ public class Shop
 		dao.deleteProduct(id);
 		// remove local
 		inventory.removeIf(p -> p != null && p.getId() == id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	public static void createUsers()
+	{
+		EntityManagerFactory emf =
+				Persistence.createEntityManagerFactory("objects/users.odb");
+
+			EntityManager em = emf.createEntityManager();
+
+			em.getTransaction().begin();
+
+			Employee emp1 = new Employee(1, "Marc", "123");
+			Employee emp2 = new Employee(2, "Admin", "admin");
+
+			em.persist(emp1);
+			em.persist(emp2);
+
+			em.getTransaction().commit();
+
+			em.close();
+			emf.close();
+
+			System.out.println("Usuarios creados correctamente");
 	}
 }

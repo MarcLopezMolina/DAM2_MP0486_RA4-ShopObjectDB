@@ -3,23 +3,41 @@
   <groupId>dam1_m03_uf6_jdbc_shop_solved</groupId>
   <artifactId>dam1_m03_uf6_jdbc_shop_solved</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	<repositories>
+		<!-- ObjectDB repository -->
+		<repository>
+			<id>objectdb</id>
+			<name>ObjectDB Repository</name>
+			<url>https://m2.objectdb.com</url>
+		</repository>
+  </repositories>
   <dependencies>
+  		<!-- MySQL dependency -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.25</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- Hibernate dependency -->
         <dependency>
 			 <groupId>org.hibernate</groupId>
 			 <artifactId>hibernate-core</artifactId>
 			 <version>5.4.10.Final</version>
 		</dependency>
+		<!-- MongoDB dependency -->
 		<dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
             <version>3.10.2</version>
         </dependency>
+		<!-- ObjectDB dependency -->
+		<dependency>
+		<groupId>com.objectdb</groupId>
+		<artifactId>
+		objectdb</artifactId>
+		<version>2.9.2</version>
+		</dependency>
     </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
