@@ -99,6 +99,12 @@ public class Shop
 
 	public static void main(String[] args)
 	{
+		/*
+		 * Execute this code below only one time to create the ObjectDB users. Example of the users created:
+		 * User 1: (1, "Marc", "123")
+		 * User 2: (2, "Admin", "admin")
+		 */
+		
 		//createUsers();
 		
 		Shop shop = new Shop();
